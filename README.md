@@ -49,4 +49,4 @@ Now It's time to be [explooorer](./snippets/ts-snippets.code-snippets)
 
 ## Contribution
 
-**Made in ❤️ with shipooor** - [0xDeep](https://twitter.com/0xDeep)
+**Made in ❤️ with shipooor** - [0xDeep](https://twitter.com/0xDeep) &[ach](https://twitter.com/acheroncrypto)
