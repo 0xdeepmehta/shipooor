@@ -1,0 +1,54 @@
+{
+    // imports
+    "import anchor": {
+        "prefix": "anchor import (ai)",
+        "body": "import * as anchor from \"@project-serum/anchor\";\n",
+        "description": "import anchor into scope"
+    },  
+    
+    // utils
+    "new keypair": {
+        "prefix": "new keypair (nk)",
+        "body": "const ${newKeypair} =  anchor.web3.Keypair.generate();\n",
+        "description": "Create new solana keypair"
+    },
+
+    "account size": {
+        "prefix": "account size (as)",
+        "body": "const ${accountSize} = program.account.${accountName}.size;\n",
+        "description": "getting account size"
+    },
+
+    "fetch account": {
+        "prefix": "fetch account (fa)",
+        "body": "const ${accountDetails} = program.account.${accountName}.fetch(${accountPublickKey});\n",
+        "description": "fetching account"
+    },
+
+    "anchor provider": {
+        "prefix": "anchor provider (ap)",
+        "body": "const ${provider} =  anchor.AnchorProvider.env();\n",
+        "description": "Create anchor provider"
+    },
+
+    "new test case": {
+        "prefix": "new test case (ntc)",
+        "body": "it(\"${0: Some new test case}\", async () => { \n\t \n});",
+        "description": "new mocha async test case"
+    },
+
+    "latest blockhash": {
+        "prefix": "latest blockhash (lb)",
+        "body": "const ${latestBlockhash} = await provider.connection.getLatestBlockhash(\"max\");",
+        "description": "Get latest blockhash"
+    },
+
+    "sol airdrop": {
+        "prefix": "sol airdrop (sa)",
+        "body": [
+            "const ${airdropRecipient} = await provider.connection.requestAirdrop(\n\t${recipientPublicKey}, \n\t${LAMPORTS_PER_SOL} \n);"
+        ],
+        "description": "Solana airdropt"
+    },
+
+}

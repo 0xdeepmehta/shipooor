@@ -1,0 +1,139 @@
+{
+    // use statements
+    "use anchor prelude": {
+        "prefix": "use anchor prelude(uap)",
+        "body": "use anchor_lang::prelude::*;",
+        "description": "use anchor prelude"
+    },
+    
+    // Macros
+    "declare id": {
+        "prefix": "declare id(di)",
+        "body": "declare_id!(\"11111111111111111111111111111111\");",
+        "description": "verify condition"
+    },
+
+    "require": {
+        "prefix": "require(rq)",
+        "body": "require!(${condition}, ${CustomError});",
+        "description": "verify condition"
+    },
+
+    "msg": {
+        "prefix": "msg(m)",
+        "body": "msg(\"${Heyo}\");",
+        "description": "log msg on blockchain"
+    },
+
+    // Procedural macros
+    "anchor de-serialize": {
+        "prefix": "serialize deserialize(sd)",
+        "body": "#[derive(AnchorSerialize, AnchorDeserialize)]",
+        "description": "Derive Anchor Serialize and Deserialize"
+    },
+
+    "mut attribute": {
+        "prefix": "mut attribute(mat)",
+        "body": "#[account(mut)]",
+        "description": "mark account as mutable"
+    },
+
+    "mut account": {
+        "prefix": "mut account(mac)",
+        "body": "#[account(mut)]\npub ${new_account}: Account<'info, ${NewAccount}>,",
+        "description": "New account as mutable"
+    },
+
+    "init account": {
+        "prefix": "init account(ia)",
+        "body": [
+            "#[account(init, payer = signer, space = ${})]",
+            "pub ${new_account}: Account<'info, ${NewAccount}>,"
+        ],
+        "description": "Init new account"
+    },
+
+    "init pda": {
+        "prefix": "init pda(ipda)",
+        "body": "#[account(\n init, \n payer = signer, \n space = ${1}, \n seeds = [${2}], \n bump,\n)] \npub ${new_account}: Account<'info, ${NewAccount}>,",
+        "description": "Init new PDA"
+    },
+
+    // big fishes
+    "create fn": {
+        "prefix": "create fn(cf)",
+        "body": "pub fn ${name}(ctx: Context<${args}>) -> Result<()> {\n\tOk(())\n}",
+        "description": "Create an anchor function"
+    },
+
+    "create program": {
+        "prefix": "create program(cp)",
+        "body": "#[program]\nmod ${my_program} {\n\tuse super::*;\n\tpub fn ${init}(ctx: Context<${MyContext}>) -> Result<()> {\n\t\tOk(())\n\t}\n}",
+        "description": "Create an anchor program"
+    },
+
+    "Create Context": {
+        "prefix": "create context(cc)",
+        "body": "#[derive(Accounts)]\npub struct ${MyContext}<'info> {\n\t#[account(${mut})]\n\tpub ${my_account}: Account<'info, ${NewAccount}>,\n}",
+        "description": "Create Context Struct"
+    },
+
+    "create account": {
+        "prefix": "create account(ca)",
+        "body": "#[account]\n#[derive(Default)]\npub struct ${NewAccount} {\n\t${field}: ${u64},\n}",
+        "description": "Create an anchor account"
+    },
+
+    "create struct": {
+        "prefix": "create struct(cs)",
+        "body": "pub struct ${MyStruct} {\n\t\n}",
+        "description": "Create an struct"
+    },
+
+    // Errors
+    "custom error": {
+        "prefix": "define custom error(dce)",
+        "body": "#[error_code]\npub enum ${MyError} {\n\t#[msg(\"${Custom Error Message}\")]\n\t${CustomErrorName},\n}",
+        "description": "Define anchor custom error"
+    },
+
+    "error variant": {
+        "prefix": "error variant (ev)",
+        "body": "#[msg(\"${Custom Error Message}\")]\n${CustomErrorName},",
+        "description": "New error variant"
+    },
+
+    // additional accounts
+    "system program": {
+        "prefix": "system program(sp)",
+        "body": "pub system_program: Program<'info, System>,",
+        "description": "add solana system program"
+    },
+
+    "token program": {
+        "prefix": "token program(tp)",
+        "body": "pub token_program: Program<'info, Token>,",
+        "description": "add spl token progrma "
+    },
+
+    "rent sysvar": {
+        "prefix": "rent sysvar(sysr)",
+        "body": "pub rent: Sysvar<'info, Rent>,",
+        "description": "add solana rent progrma "
+    },
+
+    "clock sysvar": {
+        "prefix": "clock sysvar(sysc)",
+        "body": "pub clock: Sysvar<'info, Clock>,",
+        "description": "add solana clock progrma "
+    },
+
+    "signer": {
+        "prefix": "signer (sig)",
+        "body": "#[account(mut)]\npub signer: Signer<'info>,",
+        "description": "add solana clock progrma "
+    },
+
+    // utils function
+    // todo!()
+}

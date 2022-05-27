@@ -1,0 +1,29 @@
+{
+    "name": "shipooor",
+    "author": "0xdeepmehta",
+    "displayName": "shipooor",
+    "description": "shipooor ship 🏄‍",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.67.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "rust",
+                "path": "./snippets/rust-snippets.code-snippets"
+            },
+            {
+                "language": "typescript",
+                "path": "./snippets/ts-snippets.code-snippets"
+            },
+            {
+                "language": "javascript",
+                "path": "./snippets/ts-snippets.code-snippets"
+            }
+        ]
+    }
+}
