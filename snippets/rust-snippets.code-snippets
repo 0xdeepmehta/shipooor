@@ -47,7 +47,7 @@
     "init account": {
         "prefix": "init account(ia)",
         "body": [
-            "#[account(init, payer = signer, space = ${})]",
+            "#[account(init, payer = signer, space = ${1})]",
             "pub ${new_account}: Account<'info, ${NewAccount}>,"
         ],
         "description": "Init new account"
@@ -74,7 +74,7 @@
 
     "Create Context": {
         "prefix": "create context(cc)",
-        "body": "#[derive(Accounts)]\npub struct ${MyContext}<'info> {\n\t#[account(${mut})]\n\tpub ${my_account}: Account<'info, ${NewAccount}>,\n}",
+        "body": "#[derive(Accounts)]\npub struct ${MyContext}<'info> {\n \n}",
         "description": "Create Context Struct"
     },
 
@@ -93,13 +93,13 @@
     // Errors
     "custom error": {
         "prefix": "define custom error(dce)",
-        "body": "#[error_code]\npub enum ${MyError} {\n\t#[msg(\"${Custom Error Message}\")]\n\t${CustomErrorName},\n}",
+        "body": "#[error_code]\npub enum ${MyError} {\n\t#[msg(\"${error_msg}\")]\n\t${CustomErrorName},\n}",
         "description": "Define anchor custom error"
     },
 
     "error variant": {
         "prefix": "error variant (ev)",
-        "body": "#[msg(\"${Custom Error Message}\")]\n${CustomErrorName},",
+        "body": "#[msg(\"${error_msg}\")]\n${CustomErrorName},",
         "description": "New error variant"
     },
 

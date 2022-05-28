@@ -2,8 +2,15 @@
     "name": "shipooor",
     "author": "0xdeepmehta",
     "displayName": "shipooor",
+    "publisher": "0xDeep",
     "description": "shipooor ship 🏄‍",
     "version": "0.0.1",
+    "icon": "assets/anchorShipooor.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/0xdeepmehta/shipooor"
+      },
+    
     "engines": {
         "vscode": "^1.67.0"
     },
