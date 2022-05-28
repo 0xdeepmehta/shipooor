@@ -11,8 +11,28 @@
 ```rust
 #[derive(Accounts)]
 pub struct MyContext<'info> {
-    #[account(mut)]
-    pub my_account: Account<'info, NewAccount>,
+
+}
+```
+</br>
+
+>`init pda(ipda)`
+```rust
+#[account(
+    init, 
+    payer = signer, 
+    space = , 
+    seeds = [], 
+    bump,
+)] 
+pub new_account: Account<'info, NewAccount>,
+```
+</br>
+
+>`create fn(cf)`
+```rust
+pub fn name(ctx: Context<Args>) -> Result<()> {
+    Ok(())
 }
 ```
 
@@ -49,4 +69,4 @@ Now It's time to be [explooorer](./snippets/ts-snippets.code-snippets)
 
 ## Contribution
 
-**Made in ❤️ with shipooor** - [0xDeep](https://twitter.com/0xDeep) & [ache](https://twitter.com/acheroncrypto)
+**Made in ❤️ with shipooor** - [0xDeep](https://twitter.com/0xDeep) & [Ache](https://twitter.com/acheroncrypto)
