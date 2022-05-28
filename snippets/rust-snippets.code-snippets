@@ -62,7 +62,7 @@
     // big fishes
     "create fn": {
         "prefix": "create fn(cf)",
-        "body": "pub fn ${name}(ctx: Context<${args}>) -> Result<()> {\n\tOk(())\n}",
+        "body": "pub fn ${name}(ctx: Context<${Args}>) -> Result<()> {\n\tOk(())\n}",
         "description": "Create an anchor function"
     },
 
