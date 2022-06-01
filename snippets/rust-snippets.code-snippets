@@ -21,7 +21,7 @@
 
     "msg": {
         "prefix": "msg(m)",
-        "body": "msg(\"${Heyo}\");",
+        "body": "msg!(\"${Heyo}\");",
         "description": "log msg on blockchain"
     },
 
